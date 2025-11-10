@@ -1,5 +1,5 @@
 import unittest
-from basic_functions import add, subtract, multiply, divide, fizz_buzz, fibonacci, triangle
+from basic_functions import *
 
 class TestBasicFunctions(unittest.TestCase):
     def test_add(self):
@@ -42,3 +42,41 @@ class TestBasicFunctions(unittest.TestCase):
         self.assertEqual(triangle(2), ["*", "***"])
         self.assertEqual(triangle(3), ["*", "***", "*****"])
         self.assertEqual(triangle(4), ["*", "***", "*****", "*******"])
+
+    def test_return_list_stats(self):
+        self.assertEqual(return_list_stats([1, 2, 3, 4, 5]), {
+            "unique_numbers": {1, 2, 3, 4, 5},
+            "min": 1,
+            "max": 5,
+            "average": 3.0,
+            "even_pairs": [],
+            "odd_pairs": [(0, 1), (1, 2), (2, 3), (3, 4)],
+            "even_numbers": (2, 4),
+            "odd_numbers": (1, 3, 5),
+            "number_of_even_numbers": 2,
+            "number_of_odd_numbers": 3
+        })
+        self.assertEqual(return_list_stats([1, 2, 3, 4, 5, 6]), {
+            "unique_numbers": {1, 2, 3, 4, 5, 6},
+            "min": 1,
+            "max": 6,
+            "average": 3.5,
+            "even_pairs": [],
+            "odd_pairs": [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5)],
+            "even_numbers": (2, 4, 6),
+            "odd_numbers": (1, 3, 5),
+            "number_of_even_numbers": 3,
+            "number_of_odd_numbers": 3
+        })
+        self.assertEqual(return_list_stats([6, 2, 3, 5, 9, 4, 1, 11]), {
+            "unique_numbers": {6, 2, 3, 5, 9, 4, 1, 11},
+            "min": 1,
+            "max": 11,
+            "average": 5.1,
+            "even_pairs": [(0, 1), (2, 3), (3, 4), (6, 7)],
+            "odd_pairs": [(1, 2), (4, 5), (5, 6)],
+            "even_numbers": (6, 2, 4),
+            "odd_numbers": (3, 5, 9, 1, 11),
+            "number_of_even_numbers": 3,
+            "number_of_odd_numbers": 5
+        })
