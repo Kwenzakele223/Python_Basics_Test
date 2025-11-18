@@ -1,22 +1,45 @@
 
 
 def add(num1, num2):
-    pass  # Implement addition
+     adding = num1 + num2  # Implement addition
+     return adding
 
 def subtract(num1, num2):
-    pass  # Implement subtraction
+    minus = num1 - num2  # Implement subtraction
+    return minus
 
 def multiply(num1, num2):
-    pass  # Implement multiplication
+    product = num1 * num2  # Implement multiplication
+    return product
 
 def divide(num1, num2):
-    pass  # Implement division with zero division check
+    division = num1 // num2  # Implement division with zero division check
+    return division
 
 def fizz_buzz(number):
-    pass  # Implement FizzBuzz logic
+    # Implement FizzBuzz logic
+    if number == 3:
+        return "Fizz"
+    elif number == 5:
+        return "Buzz"
+    elif number == 15:
+        return "FizzBuzz"
+    else:
+        return number
 
 def fibonacci(n):
-    pass  # Implement Fibonacci sequence logic
+    fibo = [1, 2]# Implement Fibonacci sequence logic
+    count = 1
+    if n == 0 and n < 0:
+        return 1
+    if n == 1:
+        return 1
+    else:
+        for i in range(2, n):
+            
+            return fibo
+        
+print(fibonacci(5))
         
 def triangle(n):
     pass  # Implement triangle generation logic
@@ -42,7 +65,15 @@ def return_list_stats(numbers):
             number_of_odd_numbers : the total number of even numbers in the list
                  'numbers'
     """
-    pass
+    stats_list = {"unique_numbers": set(numbers), 
+                  "max": max(numbers),
+                  "min": min(numbers),
+                  "avarage": sum(numbers)/len(numbers),
+                #   "even_pairs":,
+                #   "odd_pairs":,
+                  "even_numbers":(i for i in numbers if i % 2 == 0),
+                  "odd_nuumbers": (i for i in numbers if i % 2 != 0),
+                  "number_of_even_numbers": (len(i) for i in numbers if i % 2 == 0)}
 
 # TODO: (Bonus) Implement the pascal_triangle function below
 def pascal_triangle(n):
